@@ -1,2 +1,2 @@
-# strp
-An Android app for STRP Eindhoven made for a school project
+# STRP
+An Android app for [STRP](http://strp.nl) made for a school project

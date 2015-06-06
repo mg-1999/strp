@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">STRP</string>
+    <string name="title_activity_main">STRP</string>
+    <string name="title_activity_info">Informatie</string>
+    <string name="title_activity_language_dialog">Language</string>
+
+    <string name="photos">Foto\'s</string>
+    <string name="sounds">Sounds</string>
+    <string name="voice">Record</string>
+    <string name="camera">Camera</string>
+    <string name="finish">Finish</string>
+    <string name="agenda">Agenda</string>
+
+    <string name="date0">Rock and Power</string>
+    <string name="date0_time">Vrijdag – 5 juni 2015 – 12:35</string>
+    <string name="date0_desc">This is an example, DO NOT take it serious.</string>
+
+    <string name="date1">PowPow Live</string>
+    <string name="date1_time">Zondag – 22 juni 2015 – 15:00</string>
+    <string name="date1_desc">This is an example, DO NOT take it serious.</string>
+
+    <string name="lang_nl">Nederlands</string>
+    <string name="lang_en">English</string>
+    <string name="lang_du">Deutsch</string>
+    <string name="lang_es">Español</string>
+
+
+    <string name="action_settings">Instellingen</string>
+    <string name="title_activity_age_selector">Selecteer Leeftijd</string>
+
+    <string name="hello_world">Hello world!</string>
+</resources>

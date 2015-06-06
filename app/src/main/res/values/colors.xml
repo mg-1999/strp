@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main Colors -->
+    <color name="primary">#673ab7</color>
+    <color name="primaryDark">#512da8</color>
+    <color name="colorAccent">#ffff10</color>
+
+    <!-- App Colors -->
+    <color name="textBox">#fff</color>
+</resources>
