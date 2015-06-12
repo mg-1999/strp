@@ -1,4 +1,4 @@
-package eu.mg_dev.strp;
+package eu.mg_dev.strp.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import eu.mg_dev.strp.R;
 
 public class MainActivity extends Activity {
 
