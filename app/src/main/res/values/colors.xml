@@ -6,5 +6,7 @@
     <color name="colorAccent">#ffff10</color>
 
     <!-- App Colors -->
-    <color name="textBox">#fff</color>
+    <color name="textBox">#ffeeeeee</color>
+    <color name="buttonTextColor">#000</color>
+    <color name="buttonTextColorDisabled">#3a000000</color>
 </resources>

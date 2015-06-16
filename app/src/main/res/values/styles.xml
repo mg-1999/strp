@@ -1,22 +1,35 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Material.Light.DarkActionBar">
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
         <item name="android:colorPrimary">@color/primary</item>
         <item name="android:colorPrimaryDark">@color/primaryDark</item>
         <item name="android:colorAccent">@color/colorAccent</item>
         <item name="android:actionBarStyle">@style/ActionBar</item>
         <item name="android:buttonStyle">@style/Button</item>
+
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionBarStyle">@style/ActionBar</item>
+        <item name="buttonStyle">@style/Button</item>
     </style>
 
     <style
         name="ActionBar"
-        parent="android:Widget.Material.Light.ActionBar">
+        parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
         <item name="android:background">@color/primary</item>
+        <item name="background">@color/primary</item>
     </style>
 
-    <style name="Button" parent="android:Widget.Button">
+    <style name="Button" parent="@style/Widget.AppCompat.Button">
         <item name="android:background">@color/textBox</item>
+        <!--<item name="android:textColor">@color/buttonTextColor</item>-->
+        <item name="android:elevation">0dp</item>
+
+        <item name="background">@color/textBox</item>
+        <!--<item name="textColor">@color/colorAccent</item>-->
+        <item name="elevation">0dp</item>
     </style>
 
 </resources>
