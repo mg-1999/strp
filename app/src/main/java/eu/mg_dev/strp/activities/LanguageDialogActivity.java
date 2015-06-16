@@ -1,8 +1,8 @@
 package eu.mg_dev.strp.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -10,7 +10,7 @@ import android.view.View;
 import eu.mg_dev.strp.R;
 
 
-public class LanguageDialogActivity extends Activity {
+public class LanguageDialogActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

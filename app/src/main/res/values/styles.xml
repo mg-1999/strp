@@ -25,11 +25,11 @@
     <style name="Button" parent="@style/Widget.AppCompat.Button">
         <item name="android:background">@color/textBox</item>
         <!--<item name="android:textColor">@color/buttonTextColor</item>-->
-        <item name="android:elevation">0dp</item>
+        <item name="android:elevation">@null</item>
 
         <item name="background">@color/textBox</item>
         <!--<item name="textColor">@color/colorAccent</item>-->
-        <item name="elevation">0dp</item>
+        <item name="elevation">@null</item>
     </style>
 
 </resources>
