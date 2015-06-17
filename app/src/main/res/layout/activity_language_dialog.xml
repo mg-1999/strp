@@ -12,36 +12,35 @@
 
     <Button
         android:text="@string/lang_nl"
+        android:enabled="true"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="36dp"
         android:onClick="goAgeSelector"
         android:paddingTop="10dp"
-        android:paddingBottom="10dp"/>
+        android:paddingBottom="10dp"
+        style="?android:attr/borderlessButtonStyle"/>
 
     <Button
         android:text="@string/lang_en"
-        android:textColor="@color/buttonTextColorDisabled"
+        android:enabled="false"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_height="36dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"/>
 
     <Button
         android:text="@string/lang_du"
-        android:textColor="@color/buttonTextColorDisabled"
+        android:enabled="false"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_height="36dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"/>
 
     <Button
         android:text="@string/lang_es"
-        android:textColor="@color/buttonTextColorDisabled"
+        android:enabled="false"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_height="36dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"/>
 

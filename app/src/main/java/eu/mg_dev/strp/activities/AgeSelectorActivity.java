@@ -1,14 +1,16 @@
 package eu.mg_dev.strp.activities;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import eu.mg_dev.strp.R;
 
 
-public class AgeSelectorActivity extends Activity {
+public class AgeSelectorActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,5 +39,10 @@ public class AgeSelectorActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void goMain(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

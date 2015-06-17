@@ -42,7 +42,7 @@ public class LanguageDialogActivity extends ActionBarActivity {
     }
 
     public void goAgeSelector(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, AgeSelectorActivity.class);
         startActivity(intent);
     }
 }

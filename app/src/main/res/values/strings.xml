@@ -3,6 +3,7 @@
     <string name="title_activity_main">STRP</string>
     <string name="title_activity_info">Informatie</string>
     <string name="title_activity_language_dialog">Language</string>
+    <string name="title_activity_age_selector">Selecteer Leeftijd</string>
 
     <string name="photos">Foto\'s</string>
     <string name="sounds">Sounds</string>
@@ -24,9 +25,9 @@
     <string name="lang_du">Deutsch</string>
     <string name="lang_es">Español</string>
 
+    <string name="age1">13 t/m 18 jaar</string>
+    <string name="age2">19 t/m 30 jaar (niet beschikbaar)</string>
+    <string name="age3">vanaf 31 jaar (niet beschikbaar)</string>
 
     <string name="action_settings">Instellingen</string>
-    <string name="title_activity_age_selector">Selecteer Leeftijd</string>
-
-    <string name="hello_world">Hello world!</string>
 </resources>
