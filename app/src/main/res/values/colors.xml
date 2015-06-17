@@ -7,6 +7,5 @@
 
     <!-- App Colors -->
     <color name="textBox">#ffeeeeee</color>
-    <color name="buttonTextColor">#000</color>
-    <color name="buttonTextColorDisabled">#3a000000</color>
+    <color name="green">#66bb6a</color>
 </resources>
