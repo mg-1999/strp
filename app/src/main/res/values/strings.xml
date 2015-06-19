@@ -30,4 +30,7 @@
     <string name="age3">vanaf 31 jaar (niet beschikbaar)</string>
 
     <string name="action_settings">Instellingen</string>
+    <string name="title_activity_sound_record">SoundRecordActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>
