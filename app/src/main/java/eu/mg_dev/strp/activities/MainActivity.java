@@ -44,4 +44,9 @@ public class MainActivity extends ActionBarActivity {
         Intent intent = new Intent(this, InfoActivity.class);
         startActivity(intent);
     }
+
+    public void goRecord(View view) {
+        Intent intent = new Intent(this, SoundRecordActivity.class);
+        startActivity(intent);
+    }
 }

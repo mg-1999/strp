@@ -72,6 +72,7 @@
             android:paddingRight="40dp"
             android:paddingBottom="17dp"
             android:layout_marginLeft="30dp"
+            android:onClick="goRecord"
             style="?android:attr/borderlessButtonStyle"/>
     </LinearLayout>
 
