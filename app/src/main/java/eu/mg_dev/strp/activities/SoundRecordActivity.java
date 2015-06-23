@@ -25,7 +25,7 @@ public class SoundRecordActivity extends ActionBarActivity {
     private RecordButton mRecordButton = null;
     private MediaRecorder mRecorder = null;
 
-    private PlayButton   mPlayButton = null;
+    // private PlayButton mPlayButton = null;
     private MediaPlayer mPlayer = null;
 
     public SoundRecordActivity() {
@@ -107,6 +107,7 @@ public class SoundRecordActivity extends ActionBarActivity {
         }
     }
 
+    /*
     class PlayButton extends Button {
         boolean mStartPlaying = true;
 
@@ -128,26 +129,29 @@ public class SoundRecordActivity extends ActionBarActivity {
             setOnClickListener(clicker);
         }
     }
+    */
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sound_record);
 
-        LinearLayout ll = new LinearLayout(this);
-        mRecordButton = new RecordButton(this);
-        ll.addView(mRecordButton,
-                new LinearLayout.LayoutParams(
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        0));
-        mPlayButton = new PlayButton(this);
-        ll.addView(mPlayButton,
-                new LinearLayout.LayoutParams(
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        0));
-        setContentView(ll);
+        final boolean mStartRecording = true;
+
+        View.OnClickListener clicker = new View.OnClickListener() {
+            public void onClick(View v) {
+                onRecord(mStartRecording);
+                if (mStartRecording) {
+                    findViewById(R.id.recordButton).setText("STOP");
+                } else {
+                    findViewById(R.id.recordButton).setText("START");
+                }
+                mStartRecording = !mStartRecording;
+            }
+        };
+        findViewById(R.id.recordButton).setOnClickListener();
+
+
     }
 
     @Override
