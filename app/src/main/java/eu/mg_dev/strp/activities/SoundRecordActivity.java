@@ -4,6 +4,7 @@ import android.content.Context;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Environment;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.io.IOException;
 
@@ -22,11 +24,19 @@ public class SoundRecordActivity extends ActionBarActivity {
     private static final String LOG_TAG = "AudioRecordTest";
     private static String mFileName = null;
 
-    private RecordButton mRecordButton = null;
+    private long startTime;
     private MediaRecorder mRecorder = null;
 
     // private PlayButton mPlayButton = null;
     private MediaPlayer mPlayer = null;
+    private boolean mStartRecording = true;
+
+    final Handler handler = new Handler();
+    Runnable update_runnable = new Runnable() {
+        public void run() {
+            updateRecordTime();
+        }
+    };
 
     public SoundRecordActivity() {
         mFileName = Environment.getExternalStorageDirectory().getAbsolutePath();
@@ -36,38 +46,18 @@ public class SoundRecordActivity extends ActionBarActivity {
     private void onRecord(boolean start) {
         if (start) {
             startRecording();
+            startTime = System.currentTimeMillis();
+            updateRecordTime();
         } else {
             stopRecording();
+            startTime = Long.parseLong(null);
         }
-    }
-
-    private void onPlay(boolean start) {
-        if (start) {
-            startPlaying();
-        } else {
-            stopPlaying();
-        }
-    }
-
-    private void startPlaying() {
-        mPlayer = new MediaPlayer();
-        try {
-            mPlayer.setDataSource(mFileName);
-            mPlayer.prepare();
-            mPlayer.start();
-        } catch (IOException e) {
-        }
-    }
-
-    private void stopPlaying() {
-        mPlayer.release();
-        mPlayer = null;
     }
 
     private void startRecording() {
         mRecorder = new MediaRecorder();
         mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+        mRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
         mRecorder.setOutputFile(mFileName);
         mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
 
@@ -83,28 +73,6 @@ public class SoundRecordActivity extends ActionBarActivity {
         mRecorder.stop();
         mRecorder.release();
         mRecorder = null;
-    }
-
-    class RecordButton extends Button {
-        boolean mStartRecording = true;
-
-        OnClickListener clicker = new OnClickListener() {
-            public void onClick(View v) {
-                onRecord(mStartRecording);
-                if (mStartRecording) {
-                    setText("Stop recording");
-                } else {
-                    setText("Start recording");
-                }
-                mStartRecording = !mStartRecording;
-            }
-        };
-
-        public RecordButton(Context ctx) {
-            super(ctx);
-            setText("Start recording");
-            setOnClickListener(clicker);
-        }
     }
 
     /*
@@ -136,22 +104,22 @@ public class SoundRecordActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sound_record);
 
-        final boolean mStartRecording = true;
+        final Button recordButton = (Button) findViewById(R.id.recordButton);
 
-        View.OnClickListener clicker = new View.OnClickListener() {
+        View.OnClickListener recordClick = new View.OnClickListener() {
             public void onClick(View v) {
                 onRecord(mStartRecording);
                 if (mStartRecording) {
-                    findViewById(R.id.recordButton).setText("STOP");
+                    // STOP
+                    recordButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_stop_black_48dp, 0, 0, 0);
                 } else {
-                    findViewById(R.id.recordButton).setText("START");
+                    // START
+                    recordButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_mic_black_48dp, 0, 0, 0);
                 }
                 mStartRecording = !mStartRecording;
             }
         };
-        findViewById(R.id.recordButton).setOnClickListener();
-
-
+        recordButton.setOnClickListener(recordClick);
     }
 
     @Override
@@ -188,5 +156,12 @@ public class SoundRecordActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void updateRecordTime() {
+        long duration = (int) ((System.currentTimeMillis() - startTime) / 1000);
+        handler.postDelayed(update_runnable, 1000);
+
+        ((TextView) findViewById(R.id.textView7)).setText("" + duration);
     }
 }
