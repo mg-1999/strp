@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="eu.mg_dev.strp" >
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
@@ -35,8 +36,20 @@
         </activity>
         <activity
             android:name=".activities.SoundRecordActivity"
-            android:label="@string/title_activity_sound_record" >
+            android:label="@string/title_activity_sound_record"
             android:parentActivityName=".activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="eu.mg_dev.strp.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.SoundPlayActivity"
+            android:label="@string/title_activity_sound_play"
+            android:theme="@style/SoundPlayActivity"
+            android:parentActivityName=".activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="eu.mg_dev.strp.activities.MainActivity" />
         </activity>
     </application>
 

@@ -15,21 +15,30 @@
         <item name="buttonStyle">@style/Button</item>
     </style>
 
-    <style
-        name="ActionBar"
-        parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
+    <style name="ActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
         <item name="android:background">@color/primary</item>
         <item name="background">@color/primary</item>
     </style>
 
     <style name="Button" parent="@style/Widget.AppCompat.Button">
         <item name="android:background">@color/textBox</item>
-        <!--<item name="android:textColor">@color/buttonTextColor</item>-->
-        <item name="android:elevation">@null</item>
 
         <item name="background">@color/textBox</item>
-        <!--<item name="textColor">@color/colorAccent</item>-->
-        <item name="elevation">@null</item>
+    </style>
+
+    <!-- eu.mg_dev.activities.SoundPlayActivity -->
+    <style name="SoundPlayActivity" parent="@style/Theme.AppCompat.Light">
+        <item name="android:actionBarStyle">@style/TransparentActionBar</item>
+
+        <item name="actionBarStyle">@style/TransparentActionBar</item>
+    </style>
+
+    <style name="TransparentActionBar" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowActionBarOverlay">true</item>
+
+        <item name="background">@android:color/transparent</item>
+        <item name="windowActionBarOverlay">true</item>
     </style>
 
 </resources>

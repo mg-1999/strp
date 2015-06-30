@@ -9,7 +9,7 @@ import android.view.View;
 
 import eu.mg_dev.strp.R;
 
-public class MainActivity extends ActionBarActivity {
+public class  MainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,11 @@ public class MainActivity extends ActionBarActivity {
 
     public void goRecord(View view) {
         Intent intent = new Intent(this, SoundRecordActivity.class);
+        startActivity(intent);
+    }
+
+    public void goPlay(View view) {
+        Intent intent = new Intent(this, SoundPlayActivity.class);
         startActivity(intent);
     }
 }

@@ -20,16 +20,11 @@ import java.io.IOException;
 import eu.mg_dev.strp.R;
 
 public class SoundRecordActivity extends ActionBarActivity {
-
-    private static final String LOG_TAG = "AudioRecordTest";
     private static String mFileName = null;
-
     private long startTime;
     private MediaRecorder mRecorder = null;
-
-    // private PlayButton mPlayButton = null;
-    private MediaPlayer mPlayer = null;
     private boolean mStartRecording = true;
+    private boolean ongoing = false;
 
     final Handler handler = new Handler();
     Runnable update_runnable = new Runnable() {
@@ -47,25 +42,25 @@ public class SoundRecordActivity extends ActionBarActivity {
         if (start) {
             startRecording();
             startTime = System.currentTimeMillis();
+            ongoing = true;
             updateRecordTime();
         } else {
             stopRecording();
-            startTime = Long.parseLong(null);
+            ongoing = false;
         }
     }
 
     private void startRecording() {
         mRecorder = new MediaRecorder();
         mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
-        mRecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+        mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
         mRecorder.setOutputFile(mFileName);
-        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
-
+        mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_WB);
         try {
             mRecorder.prepare();
         } catch (IOException e) {
+            e.printStackTrace();
         }
-
         mRecorder.start();
     }
 
@@ -112,6 +107,7 @@ public class SoundRecordActivity extends ActionBarActivity {
                 if (mStartRecording) {
                     // STOP
                     recordButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_stop_black_48dp, 0, 0, 0);
+                    recordButton.setText("Stop Recording");
                 } else {
                     // START
                     recordButton.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_mic_black_48dp, 0, 0, 0);
@@ -128,11 +124,6 @@ public class SoundRecordActivity extends ActionBarActivity {
         if (mRecorder != null) {
             mRecorder.release();
             mRecorder = null;
-        }
-
-        if (mPlayer != null) {
-            mPlayer.release();
-            mPlayer = null;
         }
     }
 
@@ -159,9 +150,13 @@ public class SoundRecordActivity extends ActionBarActivity {
     }
 
     public void updateRecordTime() {
-        long duration = (int) ((System.currentTimeMillis() - startTime) / 1000);
-        handler.postDelayed(update_runnable, 1000);
+        int seconds = (int) ((System.currentTimeMillis() - startTime)/1000);
+        int minutes = seconds / 60;
+            seconds = seconds % 60;
+        ((TextView) findViewById(R.id.textView7)).setText(String.format("%02d:%02d", minutes, seconds));
 
-        ((TextView) findViewById(R.id.textView7)).setText("" + duration);
+        if (ongoing) {
+            handler.postDelayed(update_runnable, 1000);
+        }
     }
 }

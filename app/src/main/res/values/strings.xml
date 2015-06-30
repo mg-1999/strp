@@ -4,6 +4,8 @@
     <string name="title_activity_info">Informatie</string>
     <string name="title_activity_language_dialog">Language</string>
     <string name="title_activity_age_selector">Selecteer Leeftijd</string>
+    <string name="title_activity_sound_record">Opnemen</string>
+    <string name="title_activity_sound_play">Afspelen</string>
 
     <string name="photos">Foto\'s</string>
     <string name="sounds">Sounds</string>
@@ -30,7 +32,4 @@
     <string name="age3">vanaf 31 jaar (niet beschikbaar)</string>
 
     <string name="action_settings">Instellingen</string>
-    <string name="title_activity_sound_record">SoundRecordActivity</string>
-
-    <string name="hello_world">Hello world!</string>
 </resources>
